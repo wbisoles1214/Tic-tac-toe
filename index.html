@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <div class="actions">
+            <div class="actions__markers">
+                <button class="game__btn"><i class="fa-solid fa-xmark fa-xl"></i></button>
+                <button class="game__btn"><i class="fa-regular fa-circle"></i></button>
+            </div>
+            <div id="label_current_turn" class="current__turn">
+                ? TURN
+            </div>
+            <button id="btn_refresh" class="actions__refresh">
+                <i class="fa-solid fa-arrow-rotate-right"></i>
+            </button>
+        </div>
+
+        <div class="gameboard">
+            <div data-index="0" class="gameboard__cell"></div>
+            <div data-index="1" class="gameboard__cell"></div>
+            <div data-index="2" class="gameboard__cell"></div>
+            <div data-index="3" class="gameboard__cell"></div>
+            <div data-index="4" class="gameboard__cell"></div>
+            <div data-index="5" class="gameboard__cell"></div>
+            <div data-index="6" class="gameboard__cell"></div>
+            <div data-index="7" class="gameboard__cell"></div>
+            <div data-index="8" class="gameboard__cell"></div>
+        </div>
+
+        <div class="indicators">
+            <div class="indicators__items human">
+                <p id="label_human_marker" class="labels">(PLAYER 1)</p>
+                <p id="label_human_score" class="scores">0</p>
+            </div>
+            <div class="indicators__items tie">
+                <p class="labels">TIES</p>
+                <p id="label_tie_score" class="scores">0</p>
+            </div>
+            <div class="indicators__items cpu">
+                <p id="label_bot_marker" class="labels">(PLAYER 2)</p>
+                <p id="label_bot_score" class="scores">0</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="menu">
+        <div class="game__logos">
+            <div class="game__logo"><i class="fa-solid fa-xmark fa-xl"></i></div>
+            <div class="game__logo"><i class="fa-regular fa-circle"></i></div>
+        </div>
+        <div class="menu__markers">
+            <div class="pick__player1">PICK PLAYER 1'S MARK</div>
+            <div class="menu__marker">
+                <button id="btn_xmark" class="action__btn btn_xmark"><i class="fa-solid fa-xmark fa-xl btn__xmark_icon"></i></button>
+                <button id="btn_circle" class="action__btn btn_circle"><i class="fa-regular fa-circle btn__circle_icon"></i></button>
+            </div>
+            <div class="menu__note">REMEMBER: PLAYER 1 GOES FIRST</div>
+        </div>
+        <button class="vs__cpu" disabled>PLAYER VS CPU <em>(WIP)</em></button>
+        <button id="btn_players_mode" class="vs__player2">PLAYER VS PLAYER</button>
+    </div>
+
+    <div class="results">
+        <div class="results__container">
+            <div class="winner">YOU WON!</div>
+            <div class="player__winner"><i class="fa-solid fa-xmark fa-xl"></i> TAKES THE ROUND</div>
+            <div class="continue">
+                <button class="quit">QUIT</button>
+                <button class="next__round">NEXT ROUND</button>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="./js/script.js"></script>
+</body>
+</html>

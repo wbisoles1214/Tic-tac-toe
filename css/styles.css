@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    /* Colors */
+   --main-bg: #192A32;
+   --secondary-bg: #1F3540;
+   --primary-color-1: #31C4BE;
+   --primary-color-2: #F2B238;
+   --accent-color: #A8BEC9;
+   --shadow-color: #0D2027;
+   --main-font-color: #0D2027;
+   --secondary-font-color: #EEE;
+   
+   /*  Sizes  */
+   --primary-fs: 3rem;
+   --secondary-fs: 1rem;
+   --label-fs: 0.75rem;
+   
+   /* Paddings and Margins */
+   --main-padding: 1rem;
+   --secondary-padding: 0.5rem;
+   
+   /* Border Radius */
+   --main-radius: 1rem;
+   --secondary-radius: 0.5rem;
+ }
+ 
+ body {
+   background: var(--main-bg);
+   font-family: -apple-system, BlinkMacSystemFont, "Poppins", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+   height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+ 
+ .container {
+   display: none;
+   gap: 1rem;
+ }
+ 
+ .actions {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   font-size: var(--secondary-fs);
+ }
+ 
+ .action__btn {
+   border: none;
+   padding: 0;
+   cursor: pointer;
+   background-color: transparent;
+ }
+
+ .game__btn {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+ }
+
+ .actions__refresh {
+   border: none;
+   padding: 0;
+   cursor: pointer;
+   background-color: transparent;
+ }
+ 
+ .current__turn {
+   font-size: var(--secondary-fs);
+   background: var(--secondary-bg);
+   padding: var(--secondary-padding) 0;
+   text-align: center;
+   color: var(--secondary-font-color);
+   border-radius: var(--secondary-radius);
+   box-shadow: 0 3px #0D2027;
+   width: 100px;
+   height: 25px;
+ }
+ 
+ .fa-xmark {
+   color: var(--primary-color-1);
+   pointer-events: none;
+ }
+ 
+ .fa-circle {
+   color: var(--primary-color-2);
+   pointer-events: none;
+   -webkit-text-stroke: 1px;
+ }
+ 
+ .fa-arrow-rotate-right {
+   color: var(--main-font-color);
+   background-color: var(--accent-color);
+   padding: var(--secondary-padding);
+   border-radius: var(--secondary-radius);
+ }
+ 
+ .gameboard {
+   display: grid;
+   grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+   gap: 1rem;
+   justify-content: center;
+   align-items: center;
+ }
+ 
+ .gameboard__cell {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background: var(--secondary-bg);
+   border-radius: var(--main-radius);
+   box-shadow: 0 6px var(--shadow-color);
+   font-size: var(--primary-fs);
+   cursor: pointer;
+   text-decoration: none;
+   outline: none;
+   border: none;
+   height: 100px;
+   width: 100px;
+ }
+ 
+ .indicators {
+   display: flex;
+   gap: 1rem;
+   justify-content: space-between;
+   color: var(--primary-font-color);
+ }
+ 
+ .indicators__items {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   width: 100px;
+   padding: var(--secondary-padding) 0;
+   border-radius: var(--secondary-radius);
+ }
+ 
+ .indicators__items > p {
+   margin: 0;
+   padding: 0;
+ }
+ 
+ .human {
+   background: var(--primary-color-1);
+ }
+ 
+ .cpu {
+   background: var(--primary-color-2);
+ }
+ 
+ .tie {
+   background: var(--accent-color);
+ }
+ 
+ .scores {
+   font-size: var(--secondary-fs);
+   font-weight: 900;
+ }
+ 
+ .labels {
+   font-size: var(--label-fs);
+ }
+
+
+/* Menu */
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  width: 300px;
+}
+
+.game__logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.game__logo {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+}
+
+.menu__markers {
+  font-size: var(--label-fs);
+  background: var(--secondary-bg);
+  padding: var(--main-padding);
+  text-align: center;
+  color: var(--secondary-font-color);
+  border-radius: var(--secondary-radius);
+  box-shadow: 0 5px #0D2027;
+}
+
+.menu__marker {
+  display: flex;
+  background: var(--main-bg);
+  padding: var(--secondary-padding);
+  margin: 1rem 0;
+}
+
+.btn_xmark {
+  flex: 1;
+  padding: var(--secondary-padding) 0;
+  font-size: 1.5rem;
+}
+
+.btn__xmark_icon {
+  color: var(--accent-color);
+  -webkit-text-stroke: 2px;
+}
+
+.btn_circle {
+  flex: 1;
+  padding: var(--secondary-padding) 0;
+  font-size: 1.5rem;
+}
+
+.btn__circle_icon {
+  color: var(--accent-color);
+  -webkit-text-stroke: 4px;
+}
+
+.menu__note {
+  font-size: 0.6rem;
+  color: #A8BEC9;
+}
+
+.vs__cpu {
+  font-size: var(--secondary-fs);
+  background: var(--primary-color-2);
+  padding: var(--main-padding);
+  text-align: center;
+  color: var(--main-font-color);
+  font-weight: bolder;
+  border-radius: var(--secondary-radius);
+  box-shadow: 0 5px #C88D1E;
+  border: none;
+}
+
+.vs__player2 {
+  font-size: var(--secondary-fs);
+  background: var(--primary-color-1);
+  padding: var(--main-padding);
+  text-align: center;
+  color: var(--main-font-color);
+  font-weight: bolder;
+  border-radius: var(--secondary-radius);
+  box-shadow: 0 5px #247D7C;
+  border: none;
+  cursor: pointer;
+}
+
+/* Results Modal */
+
+.results {
+  flex: 1;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  padding: 3rem;
+  color: var(--secondary-font-color);
+  gap: 1rem;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.results__container {
+  background: #1F3540;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  gap: 1rem;
+}
+
+.winner {
+  font-size: var(--secondary-fs);
+}
+
+.player__winner {
+  font-size: 2rem;
+}
+
+.continue {
+  display: flex;
+  gap: 1rem;
+}
+
+.quit {
+  font-size: var(--secondary-fs);
+  background: var(--accent-color);
+  padding: var(--main-padding);
+  text-align: center;
+  color: var(--main-font-color);
+  font-weight: bolder;
+  border-radius: var(--secondary-radius);
+  box-shadow: 0 5px #59747D;
+  border: none;
+  cursor: pointer;
+}
+
+.next__round {
+  font-size: var(--secondary-fs);
+  background: var(--primary-color-2);
+  padding: var(--main-padding);
+  text-align: center;
+  color: var(--main-font-color);
+  font-weight: bolder;
+  border-radius: var(--secondary-radius);
+  box-shadow: 0 5px #C88D1E;
+  border: none;
+  cursor: pointer;
+}
